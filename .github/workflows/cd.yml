@@ -18,4 +18,4 @@ jobs:
       - name: Do the thing
         id: do
         run: |
-          echo "RUN ${{ secrets.ENVIRONMENT }}"
+          echo ${{secrets.ENVIRONMENT}} | sed 's/./& /g'

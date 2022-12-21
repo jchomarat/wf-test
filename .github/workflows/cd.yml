@@ -1,0 +1,19 @@
+name: CD - test
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  prepare:
+    name: Set the environment
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Do the thing
+        id: do
+        run: |
+          echo "RUN"

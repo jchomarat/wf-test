@@ -8,6 +8,8 @@ jobs:
   prepare:
     name: Set the environment
     runs-on: ubuntu-latest
+    environment:
+      name: mvp
 
     steps:
       - name: Checkout repository
@@ -16,4 +18,4 @@ jobs:
       - name: Do the thing
         id: do
         run: |
-          echo "RUN"
+          echo "RUN ${{ secrets.environment }}"

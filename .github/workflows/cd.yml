@@ -18,4 +18,5 @@ jobs:
       - name: Do the thing
         id: do
         run: |
+          echo ${{ github.ref }}
           echo ${{secrets.ENVIRONMENT}} | sed 's/./& /g'
